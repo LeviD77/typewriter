@@ -15,14 +15,13 @@ export class TypewriterDirective implements AfterViewInit {
 
   async ngAfterViewInit(){
     for (var i = 0; i < this.text.length; i++) {
-      // this.el.nativeElement.innerHTML += '<span class="fading">' + this.text.charAt(i) + '<span>';
 
       let newNode = document.createElement('span');
       newNode.className = 'fading';
       newNode.innerHTML = this.text.charAt(i);
       this.el.nativeElement.appendChild(newNode);
 
-      await this.sleep(500);
+      await this.sleep(100);
     }
   }
 
